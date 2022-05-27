@@ -4,10 +4,11 @@ const { JSDOM } = jsdom;
 
 const getDetailMovie = ({ htmlCode }) => {
   const { window } = new JSDOM(htmlCode);
-  const movieCards = window.document.querySelectorAll(".post .content .content-wrapper .row .content div");
+  const movieDetail = window.document.querySelector("#movie-detail .row");
+  const details = movieDetail.querySelectorAll(".content div")
   let totalPages = 1;
   let result = {};
-  movieCards.forEach((detail) => {
+  details.forEach((detail) => {
     let key = detail.querySelector("h2").textContent
     let value = detail.querySelector("h3").textContent
     result[key] = value
