@@ -10,7 +10,10 @@ const getMovieData = ({ htmlCode }) => {
   const totalPages = Number(
     window.document.querySelector("#pagination span").textContent.split(" ")[3]
   );
-
+  /* not found */
+  if (!movieCards) {
+    return false
+  }
   let result = [];
 
   movieCards.forEach((movie) => {
