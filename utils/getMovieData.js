@@ -7,14 +7,15 @@ const getMovieData = ({ htmlCode }) => {
   const { window } = new JSDOM(htmlCode);
 
   const movieCards = window.document.querySelectorAll("article.mega-item");
-  const totalPages = Number(
-    window.document.querySelector("#pagination span").textContent.split(" ")[3]
-  );
   /* not found */
   console.log(movieCards);
   if (movieCards == undefined || movieCards == null) {
     return false
   }
+  
+  const totalPages = Number(
+    window.document.querySelector("#pagination span").textContent.split(" ")[3]
+  );
   let result = [];
 
   movieCards.forEach((movie) => {
