@@ -13,15 +13,15 @@ const getDetailMovie = ({ htmlCode }) => {
       return { result, totalPages };
     }
     let key = detail.querySelector("h2").textContent
+    let value = ""
     if (detail.querySelector("h3") == null){
-      let value = detail.querySelector("time").textContent
-      
+      value = detail.querySelector("time").textContent
     } else {
-      let value = detail.querySelector("h3").textContent
+      value = detail.querySelector("h3").textContent
     }
     
     result[key] = value
-    console.log(result[key]);
+    //console.log(result[key]);
   });
 };
 
