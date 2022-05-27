@@ -5,17 +5,19 @@ const { JSDOM } = jsdom;
 
 const getMovieData = ({ htmlCode }) => {
   const { window } = new JSDOM(htmlCode);
-
   const movieCards = window.document.querySelectorAll("article.mega-item");
+  let totalPages = 1;
   /* not found */
   console.log(movieCards);
   if (movieCards == undefined || movieCards == null) {
     return false
   }
   
-  const totalPages = Number(
-    window.document.querySelector("#pagination span").textContent.split(" ")[3]
-  );
+  if (window.document.querySelector("#pagination span") != null) {
+    totalPages = Number(
+      window.document.querySelector("#pagination span").textContent.split(" ")[3]
+    );
+  }
   let result = [];
 
   movieCards.forEach((movie) => {
