@@ -7,5 +7,5 @@ const api = axios.create({
 });
 const scrap = axios.create({
   
-})
+});
 export default {api, scrap};

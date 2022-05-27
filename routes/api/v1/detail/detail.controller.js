@@ -5,7 +5,6 @@ export const index = async (req, res) => {
   const numPage = req.query.page || 1;
   const detailPage = await scrap(`${req.query.q}`);
   const htmlCode = detailPage.data;
-
   
   if (!getDetailMovie({ htmlCode })) {
     res.json({

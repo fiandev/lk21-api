@@ -2,6 +2,7 @@ import express from "express";
 import cors from "cors";
 
 import api from "#config/api";
+import scrap from "#config/api";
 import v1API from "#routes/api/v1/index";
 
 const app = express();
