@@ -8,4 +8,4 @@ const api = axios.create({
 const scrap = axios.create({
   
 })
-export default api;
+export default {api, scrap};
