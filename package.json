@@ -1,13 +1,13 @@
 {
-  "name": "api-lk21",
-  "version": "1.0.0",
+  "name": "lk21-api",
+  "version": "2.0.0",
   "description": "API Untuk mengambil data-data movie LK21",
   "main": "index.js",
   "type": "module",
   "scripts": {
     "server": "nodemon server.js"
   },
-  "author": "devnazir",
+  "author": "ryuudev",
   "license": "ISC",
   "dependencies": {
     "axios": "^0.21.2",
@@ -17,7 +17,8 @@
   },
   "keywords": [
     "API LK21",
-    "API Movie Indonesia"
+    "API Movie Indonesia",
+    "API data Layar kaca 21"
   ],
   "imports": {
     "#routes/*": "./routes/*.js",
