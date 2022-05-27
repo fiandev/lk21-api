@@ -5,6 +5,8 @@ const { JSDOM } = jsdom;
 const getDetailMovie = ({ htmlCode }) => {
   const { window } = new JSDOM(htmlCode);
   const movieDetail = window.document.querySelector("#movie-detail .row");
+  const poster = movieDetail.querySelector(".content-poster")
+  const figure = poster.querySelector("figure")
   const details = movieDetail.querySelectorAll(".content div")
   const blockquote = movieDetail.querySelector(".content blockquote")
   let totalPages = 1;
@@ -29,7 +31,9 @@ const getDetailMovie = ({ htmlCode }) => {
   /* sinopsis */
   let sinopsis = blockquote.querySelector("p").textContent
   result["sinopsis"] = sinopsis
-
+  /* thumbnail */
+  let thumbnail = figure.querySelector("img").getAttribute("src")
+  result["thumbnail"] = thumbnail
   /* return */
   return { result, totalPages };
 };
