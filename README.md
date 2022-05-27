@@ -98,5 +98,4 @@ Example
 https://api-lk21.herokuapp.com/api/v1/latest?page=2
 ```
 
-## SUPPORTS
-https://www.paypal.com/paypalme/nazirbahrululum
+> dibuat oleh **fiandev**
