@@ -43,7 +43,7 @@ const getDetailMovie = ({ htmlCode }) => {
   let linkdl = dlMovie.querySelector(".btn-success").getAttribute("href")
   result["Download"] = linkdl
   /* iframe */
-  let iframe = loadPlayer.querySelector("iframe").getAttribute("src")
+  let iframe = loadPlayer.querySelector("#player-iframe").getAttribute("src")
   result["Streaming"] = iframe
   /* return */
   return { result, totalPages };
