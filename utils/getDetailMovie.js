@@ -8,6 +8,7 @@ const getDetailMovie = ({ htmlCode }) => {
   const details = movieDetail.querySelectorAll(".content div")
   let totalPages = 1;
   let result = {};
+  
   details.forEach((detail) => {
     if (detail.querySelector("h2") == null){
       return { result, totalPages };
@@ -23,6 +24,7 @@ const getDetailMovie = ({ htmlCode }) => {
     result[key] = value
     //console.log(result[key]);
   });
+  return { result, totalPages };
 };
 
 export default getDetailMovie;
