@@ -4,7 +4,7 @@ const { JSDOM } = jsdom;
 
 const getDetailMovie = ({ htmlCode }) => {
   const { window } = new JSDOM(htmlCode);
-  const movieCards = window.document.querySelectorAll("#movie-detail .content div");
+  const movieCards = window.document.querySelectorAll(".post .content .content-wrapper .row .content div");
   let totalPages = 1;
   let result = [];
   let movie = {};
