@@ -11,7 +11,8 @@ const getMovieData = ({ htmlCode }) => {
     window.document.querySelector("#pagination span").textContent.split(" ")[3]
   );
   /* not found */
-  if (!movieCards) {
+  console.log(movieCards);
+  if (movieCards == undefined || movieCards == null) {
     return false
   }
   let result = [];
