@@ -9,12 +9,20 @@ const getDetailMovie = ({ htmlCode }) => {
   let totalPages = 1;
   let result = {};
   details.forEach((detail) => {
-    let key = detail.querySelector("h2").textContent || "none"
-    let value = detail.querySelector("h3").textContent || "none"
+    if (detail.querySelector("h2") == null){
+      return { result, totalPages };
+    }
+    let key = detail.querySelector("h2").textContent
+    if (detail.querySelector("h3") == null){
+      let value = detail.querySelector("time").textContent
+      
+    } else {
+      let value = detail.querySelector("h3").textContent
+    }
+    
     result[key] = value
     console.log(result[key]);
   });
-  return { result, totalPages };
 };
 
 export default getDetailMovie;
