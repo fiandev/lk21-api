@@ -11,6 +11,7 @@ const getDetailMovie = ({ htmlCode }) => {
     let key = detail.querySelector("h2").textContent
     let value = detail.querySelector("h3").textContent
     result[key] = value
+    console.log(result[key]);
   });
   return { result, totalPages };
 };
