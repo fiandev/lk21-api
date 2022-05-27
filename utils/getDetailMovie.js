@@ -9,6 +9,8 @@ const getDetailMovie = ({ htmlCode }) => {
   const figure = poster.querySelector("figure")
   const details = movieDetail.querySelectorAll(".content div")
   const blockquote = movieDetail.querySelector(".content blockquote")
+  const dlMovie = movieDetail.querySelector("#download-movie")
+  const loadPlayer = movieDetail.querySelector("#loadPlayer")
   let totalPages = 1;
   let result = {};
   
@@ -28,12 +30,20 @@ const getDetailMovie = ({ htmlCode }) => {
     result[key] = value
     //console.log(result[key]);
   });
-  /* sinopsis */
+  /* sinopsis dan judul */
   let sinopsis = blockquote.querySelector("p").textContent
-  result["sinopsis"] = sinopsis
+  let title = blockquote.querySelector("h3").textContent
+  result["Sinopsis"] = sinopsis
+  result["Title"] = title
   /* thumbnail */
   let thumbnail = figure.querySelector("img").getAttribute("src")
-  result["thumbnail"] = thumbnail
+  result["Thumbnail"] = thumbnail
+  /* link download */
+  let linkdl = dlMovie.querySelector(".btn-success").getAttribute("href")
+  result["Download"] = linkdl
+  /* iframe */
+  let iframe = loadPlayer.querySelector("iframe").getAttribute("src")
+  result["Streaming"] = iframe
   /* return */
   return { result, totalPages };
 };
