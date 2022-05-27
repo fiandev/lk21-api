@@ -1,7 +1,7 @@
 import api from "#config/api";
 import getMovieData from "#utils/getMovieData";
 import getIndexMovie from "#utils/getIndexMovie";
-
+import {author, date} from "#config/info"
 export const index = async (req, res) => {
   const numPage = req.query.page || 1;
   const { alphabet } = req.params;
@@ -20,5 +20,10 @@ export const index = async (req, res) => {
 
 export const getListAlphabets = async (req, res) => {
   const listAlphabets = await getIndexMovie();
-  res.json({ data: listAlphabets, totalCategory: listAlphabets.length });
+  res.json({ 
+    data: listAlphabets, 
+    totalCategory: listAlphabets.length,
+    author: author,
+    date: date
+  });
 };

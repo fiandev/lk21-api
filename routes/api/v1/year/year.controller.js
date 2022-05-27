@@ -1,6 +1,6 @@
 import api from "#config/api";
 import getMovieData from "#utils/getMovieData";
-
+import {author, date} from "#config/info"
 export const index = async (req, res) => {
   const numPage = req.query.page || 1;
   const { year } = req.params;
@@ -14,5 +14,7 @@ export const index = async (req, res) => {
     totalItems: result.length,
     totalPages,
     currentPage: Number(numPage),
+    author: author,
+    date: date
   });
 };

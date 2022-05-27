@@ -12,7 +12,6 @@ const getDetailMovie = ({ htmlCode }) => {
   const dlMovie = window.document.querySelector("#download-movie")
   const player = window.document.querySelector("#player")
   const loadPlayer = player.querySelector("#loadPlayer")
-  let totalPages = 1;
   let result = {};
   
   details.forEach((detail) => {
@@ -48,7 +47,7 @@ const getDetailMovie = ({ htmlCode }) => {
     result["Streaming"] = iframe
   }
   /* return */
-  return { result, totalPages };
+  return { result };
 };
 
 export default getDetailMovie;
