@@ -3,7 +3,7 @@ import { baseURL } from "#config/api";
 
 const { JSDOM } = jsdom;
 
-const getMovieData = ({ htmlCode }) => {
+const getDetailMovie = ({ htmlCode }) => {
   const { window } = new JSDOM(htmlCode);
   const movieCards = window.document.querySelector("#movie-detail .content");
   let totalPages = 1;

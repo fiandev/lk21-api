@@ -3,18 +3,18 @@ import getMovieData from "#utils/getDetailMovie";
 
 export const index = async (req, res) => {
   const numPage = req.query.page || 1;
-  const searchPage = await api(`/${req.query.q}`);
-  const htmlCode = searchPage.data;
+  const detailPage = await scrap(`${req.query.q}`);
+  const htmlCode = detailPage.data;
 
   
-  if (!getMovieData({ htmlCode })) {
+  if (!getDetailMovie({ htmlCode })) {
     res.json({
       status: 404,
       message: "not found!",
       query: `${req.query.q}`
     });
   } else {
-    const { result, totalPages } = getMovieData({ htmlCode });
+    const { result, totalPages } = getDetailMovie({ htmlCode });
     res.json({
       data: result,
       totalItems: result.length,
