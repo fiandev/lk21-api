@@ -29,4 +29,4 @@ const getDetailMovie = ({ htmlCode }) => {
   return { result, totalPages };
 };
 
-export default getMovieData;
+export default getDetailMovie;
