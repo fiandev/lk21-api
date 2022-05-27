@@ -10,7 +10,8 @@ const getDetailMovie = ({ htmlCode }) => {
   const details = movieDetail.querySelectorAll(".content div")
   const blockquote = movieDetail.querySelector(".content blockquote")
   const dlMovie = window.document.querySelector("#download-movie")
-  const loadPlayer = window.document.querySelector("#loadPlayer")
+  const player = window.document.querySelector("#player")
+  const loadPlayer = player.querySelector("#loadPlayer")
   let totalPages = 1;
   let result = {};
   
