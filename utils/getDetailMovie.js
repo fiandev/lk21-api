@@ -27,7 +27,7 @@ const getDetailMovie = ({ htmlCode }) => {
     //console.log(result[key]);
   });
   /* sinopsis */
-  let sinopsis = blockquote.querySelector("p")
+  let sinopsis = blockquote.querySelector("p").textContent
   result["sinopsis"] = sinopsis
 
   /* return */
