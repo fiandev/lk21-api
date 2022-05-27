@@ -1,6 +1,5 @@
 import express from "express";
 import cors from "cors";
-
 import api from "#config/api";
 import scrap from "#config/scrap";
 import {author, date} from "#config/info"
@@ -12,11 +11,11 @@ app.use(cors({ origin: "*" }));
 app.set("json spaces", 2);
 
 app.get("/", async ({ res }) => {
-  const { status, message } = await api();
+  const { status, statusText } = await api();
 
   res.json({
     status: status,
-    message: message,
+    message: statusText,
     author: author,
     date: date
   });
