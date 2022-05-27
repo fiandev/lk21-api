@@ -1,6 +1,5 @@
 import jsdom from "jsdom";
-import { baseURL } from "#config/api";
-
+import axios from "axios";
 const { JSDOM } = jsdom;
 
 const getDetailMovie = ({ htmlCode }) => {

@@ -1,5 +1,5 @@
-import api from "#config/api";
-import getMovieData from "#utils/getDetailMovie";
+import scrap from "#config/scrap";
+import getDetailMovie from "#utils/getDetailMovie";
 
 export const index = async (req, res) => {
   const numPage = req.query.page || 1;
