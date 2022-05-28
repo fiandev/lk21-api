@@ -1,6 +1,6 @@
 {
   "name": "lk21-api",
-  "version": "2.0.0",
+  "version": "1.0.0",
   "description": "API Untuk mengambil data-data movie LK21",
   "main": "index.js",
   "type": "module",
@@ -13,8 +13,7 @@
     "axios": "^0.21.2",
     "cors": "^2.8.5",
     "express": "^4.17.1",
-    "jsdom": "^19.0.0",
-    "html-table-to-json": "v1.0.0"
+    "jsdom": "^19.0.0"
   },
   "keywords": [
     "API LK21",
