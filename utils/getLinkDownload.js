@@ -7,11 +7,20 @@ const getLinkDownload = ({ htmlCode }) => {
   const { window } = new JSDOM(htmlCode);
   const container = window.document.querySelector("#results")
   const tables = container.querySelectorAll(".table-responsive table")
-  let result = [];
+  let result = {};
   
-  tables.forEach(table => {
-    const jsonTable = new HtmlTableToJson(table);
-    result.push(jsonTable)
+  tables.forEach((table, i) => {
+    let dataTable = []
+    let [header] = table.tHead.rows
+    let props = [...header.cells].map(h => h.textContent)
+    let rows = [...table.rows].map(r => {
+      const entries = [...r.cells].map((c, i) => {
+        return [props[i], c.textContent]
+      })
+      return Object.fromEntries(entries)
+    })
+    dataTable.push(rows)
+    result[`table${i}`] = dataTable
   })
   
   /* return */
