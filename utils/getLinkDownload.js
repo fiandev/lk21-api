@@ -6,7 +6,7 @@ const { JSDOM } = jsdom;
 const getLinkDownload = ({ htmlCode }) => {
   const { window } = new JSDOM(htmlCode);
   let result = [];
-  const container = window.document.selector("#results")
+  const container = window.document.queryselector("#results")
   const tables = container.querySelectorAll(".table-responsive table")
   
   tables.forEach(table => {
