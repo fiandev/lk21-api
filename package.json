@@ -13,7 +13,8 @@
     "axios": "^0.21.2",
     "cors": "^2.8.5",
     "express": "^4.17.1",
-    "jsdom": "^19.0.0"
+    "jsdom": "^19.0.0",
+    "html-table-to-json": "v1.0.0"
   },
   "keywords": [
     "API LK21",
