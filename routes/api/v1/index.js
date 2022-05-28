@@ -31,6 +31,6 @@ router.use("/alphabet", alphabetRoutes);
 router.use("/search", searchRoutes);
 router.use("/country", countryRoutes);
 router.use("/detail", detailRoutes);
-router.use("/detail", linkdlRoutes);
+router.use("/linkdl", linkdlRoutes);
 
 export default router;
