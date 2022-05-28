@@ -7,7 +7,7 @@ const getLinkDownload = ({ htmlCode }) => {
   const { window } = new JSDOM(htmlCode);
   const container = window.document.querySelector("#results")
   const tables = container.querySelectorAll(".table-responsive table")
-  let result = {};
+  let result = [];
   
   tables.forEach((table, i) => {
     let dataTable = []
@@ -19,10 +19,8 @@ const getLinkDownload = ({ htmlCode }) => {
       })
       return Object.fromEntries(entries)
     })
-    dataTable.push(rows)
-    result[`table${i}`] = dataTable
+    result.push(rows)
   })
-  
   /* return */
   return { result };
 };
