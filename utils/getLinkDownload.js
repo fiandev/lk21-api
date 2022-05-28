@@ -20,6 +20,9 @@ const getLinkDownload = ({ htmlCode }) => {
       return Object.fromEntries(entries)
     })
     result.push(rows)
+    if (i == table.length) {
+      return false;
+    }
   })
   /* return */
   return { result };
