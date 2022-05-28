@@ -1,21 +1,21 @@
 import scrap from "#config/scrap";
 import {author, date} from "#config/info"
-import getDetailMovie from "#utils/getDetailMovie";
+import getLinkDownload from "#utils/getLinkDownload";
 export const index = async (req, res) => {
   const numPage = req.query.page || 1;
-  const detailPage = await scrap(`${req.query.q}`);
+  const detailPage = await scrap(`${req.query.url}`);
   const htmlCode = detailPage.data;
   
-  if (!getDetailMovie({ htmlCode })) {
+  if (!getLinkDownload({ htmlCode })) {
     res.json({
       status: 404,
       message: "not found!",
-      query: `${req.query.q}`,
+      query: `${req.query.url}`,
       author: author,
       date: date
     });
   } else {
-    const { result } = getDetailMovie({ htmlCode });
+    const { result } = getLinkDownload({ htmlCode });
     res.json({
       status: 200,
       data: result,
