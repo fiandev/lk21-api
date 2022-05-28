@@ -12,7 +12,8 @@ import resolutionRoutes from "./resolution/index.js";
 import alphabetRoutes from "./alphabet/index.js";
 import searchRoutes from "./search/index.js";
 import countryRoutes from "./country/index.js";
-import detailFilm from "./detail/index.js";
+import detailRoutes from "./detail/index.js";
+import linkdlRoutes from "./linkdl/index.js";
 
 const router = Router();
 
@@ -29,6 +30,7 @@ router.use("/resolution", resolutionRoutes);
 router.use("/alphabet", alphabetRoutes);
 router.use("/search", searchRoutes);
 router.use("/country", countryRoutes);
-router.use("/detail", detailFilm);
+router.use("/detail", detailRoutes);
+router.use("/detail", linkdlRoutes);
 
 export default router;
